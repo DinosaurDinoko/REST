@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc131940-023d-4845-bfbe-abb584321991" name="Changes" comment="URL">
-      <change afterPath="$PROJECT_DIR$/DjangoDesign/catalog/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DjangoDesign/catalog/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DjangoDesign/catalog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoDesign/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoDesign/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoDesign/catalog/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoDesign/catalog/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoDesign/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoDesign/catalog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoDesign/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoDesign/catalog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
