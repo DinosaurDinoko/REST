@@ -1,9 +1,15 @@
+# требует, чтобы пользователь был админом для доступа к определенной странице или функции
 from django.contrib.admin.views.decorators import staff_member_required
+# требует, чтобы пользователь имел определенное разрешение для доступа к определенной странице или функции
 from django.contrib.auth.decorators import permission_required
 from django.urls import path
+# мпортирует модуль views из текущего приложения
 from .import views
+# мпортирует классы представлений, из модуля views
 from .views import CreatePostView, IndexView, CreateCategoryView
 
+# Определяет список URL-шаблонов, каждый из которых имеет свой путь и
+# связанную с ним функцию представления или класс представления
 urlpatterns = [
     path('', IndexView.as_view(template_name="index.html"), name='index'),
     path('register/', views.register, name='register'),
