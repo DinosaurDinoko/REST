@@ -1,21 +1,26 @@
-"""DesignStudio URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# импорт настроек проекта
+from django.conf import settings
+# импорт функции для добавления статических файлов
+from django.conf.urls.static import static
+# импорт модуля административной панели Django
 from django.contrib import admin
-from django.urls import path
+# импорт функций для определения URL-путей и включения других URL-конфигураций
+from django.urls import path, include
+# импорт класса для перенаправления запросов
+from django.views.generic import RedirectView
 
 urlpatterns = [
+    #  URL-путь для подключения URL-конфигурации приложения "catalog"
+    path('catalog/', include('catalog.urls')),
+    #  URL-путь для перенаправления с корневого URL на "catalog/"
+    path('', RedirectView.as_view(url='catalog/', permanent=True)),
+    #  URL-путь для подключения административной панели Django
     path('admin/', admin.site.urls),
+    # URL-путь для подключения URL-конфигурации аутентификации Django
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
+# URL-путь для обслуживания статических файлов, если проект находится в режиме отладки
+if settings.DEBUG:
+    # обавление URL-пути для обслуживания статических файлов из директории
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
